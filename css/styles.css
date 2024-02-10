@@ -56,10 +56,6 @@ img {
   margin-right: 76px;
 }
 
-svg {
-  fill: none;
-}
-
 /* ____________________Header styles____________________ */
 
 .page-header {
@@ -112,6 +108,7 @@ span.header-logo-color {
 
 .page-nav-link.active {
   color: #404bbf;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-nav-link.active::after {
@@ -132,6 +129,7 @@ span.header-logo-color {
 
 .page-nav-link:active {
   color: #404bbf;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-address {
@@ -159,6 +157,7 @@ span.header-logo-color {
 
 .page-address-link:active {
   color: #404bbf;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ____________________Solutions styles____________________ */
@@ -216,6 +215,7 @@ span.header-logo-color {
 
 .solutions-button:active {
   background-color: #404bbf;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ____________________Advantages styles____________________ */
@@ -410,7 +410,7 @@ span.header-logo-color {
   background-color: #4d5ae5;
   transform: translatey(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 40px 32px 0 32px;
+  padding: 40px 32px;
 }
 
 .portfolio-list-item:hover .overlay-text {
@@ -491,6 +491,10 @@ span.footer-logo-color {
 .footer-social-media-link-list-item {
   width: 40px;
   height: 40px;
+}
+
+.social-media-link .icon {
+  fill: #f4f4fd;
 }
 
 .footer-social-media-link-list-item .social-media-link:hover,
