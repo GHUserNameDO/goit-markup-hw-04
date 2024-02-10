@@ -68,6 +68,9 @@ svg {
   z-index: 999;
   background-color: #fff;
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
 .page-header .container {
@@ -113,7 +116,7 @@ span.header-logo-color {
 
 .page-nav-link.active::after {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   content: '';
   width: 100%;
   height: 4px;
@@ -124,6 +127,7 @@ span.header-logo-color {
 .page-nav-link:hover,
 .page-nav-link:focus {
   color: #404bbf;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-nav-link:active {
@@ -150,6 +154,7 @@ span.header-logo-color {
 .page-address-link:hover,
 .page-address-link:focus {
   color: #404bbf;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-address-link:active {
@@ -159,16 +164,18 @@ span.header-logo-color {
 /* ____________________Solutions styles____________________ */
 
 .solutions {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 188px 0;
   background-image: linear-gradient(
       to bottom,
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/people-office.jpg);
-  padding: 188px 0;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover, 1440px;
+  background-size: cover;
 }
 
 .solutions .container {
@@ -201,15 +208,13 @@ span.header-logo-color {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
-.solutions-button:hover {
+.solutions-button:hover,
+.solutions-button:focus {
   background-color: #404bbf;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .solutions-button:active {
-  background-color: #404bbf;
-}
-
-.solutions-button:focus {
   background-color: #404bbf;
 }
 
@@ -341,6 +346,10 @@ span.header-logo-color {
   background-color: #4d5ae5;
 }
 
+.team-social-media-link-list-item .icon {
+  fill: #f4f4fd;
+}
+
 .team .social-media-link:hover,
 .team .social-media-link:focus,
 .team .social-media-link:active {
@@ -376,40 +385,36 @@ span.header-logo-color {
   width: calc((100% - 2 * 24px) / 3);
 }
 
+.portfolio-list-item:hover {
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
 .portfolio-image {
   position: relative;
   overflow: hidden;
 }
 
-.overlay {
+.overlay-text {
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background-color: #4d5ae5;
-  transform: translatey(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.overlay p {
-  display: block;
   color: #f4f4fd;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  margin: 40px 32px 0 32px;
+  background-color: #4d5ae5;
+  transform: translatey(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 40px 32px 0 32px;
 }
 
-.portfolio-list-item:hover {
-  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
-    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-  cursor: pointer;
-}
-
-.portfolio-list-item:hover .overlay {
-  transform: translateY(0);
+.portfolio-list-item:hover .overlay-text {
+  transform: translateY(0%);
 }
 
 .portfolio-list-item-description {
@@ -440,6 +445,16 @@ span.header-logo-color {
   padding: 100px 0;
 }
 
+.page-footer .container {
+  display: flex;
+  align-items: baseline;
+  gap: 120px;
+}
+
+.footer-logo-container {
+  margin-right: 120px;
+}
+
 .page-footer .page-logo {
   display: inline-block;
   margin-bottom: 16px;
@@ -459,14 +474,10 @@ span.footer-logo-color {
   letter-spacing: 0.02em;
 }
 
-.page-footer .container {
-  display: flex;
-  gap: 120px;
-}
-
 .footer-social-meadia-title {
   color: #fff;
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
   margin-bottom: 16px;
@@ -477,9 +488,14 @@ span.footer-logo-color {
   gap: 16px;
 }
 
-.page-footer .social-media-link:hover,
-.page-footer .social-media-link:focus,
-.page-footer .social-media-link:active {
+.footer-social-media-link-list-item {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-social-media-link-list-item .social-media-link:hover,
+.footer-social-media-link-list-item .social-media-link:focus,
+.footer-social-media-link-list-item .social-media-link:active {
   background-color: #31d0aa;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
