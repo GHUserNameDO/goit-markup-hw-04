@@ -444,7 +444,6 @@ span.header-logo-color {
 .page-footer .container {
   display: flex;
   align-items: baseline;
-  gap: 120px;
 }
 
 .footer-logo-container {
